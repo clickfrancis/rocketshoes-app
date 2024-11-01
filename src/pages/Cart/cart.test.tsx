@@ -19,9 +19,9 @@ export interface CartContextType {
     image: string;
     amount: number;
   }>;
-  addProduct: (product: any) => void; // Ajuste o tipo conforme necessário
-  removeProduct: (product: any) => void; // Ajuste o tipo conforme necessário
-  checkout: () => void; // Ajuste o tipo conforme necessário
+  addProduct: (product: number) => void;
+  removeProduct: (product: number) => void;
+  checkout: () => void;
 }
 
 const mockUseCart = () => ({

@@ -9,7 +9,7 @@ describe("Switch of test ProductCard", () => {
   const label = "Adicionar ao Carrinho";
   const idMock = 11;
   const imageMock = "sourceImage";
-  const priceMock = 1.0;
+  const priceMock = 1;
   const titleMock = "title";
   let title: HTMLElement;
   let image: HTMLImageElement;
@@ -32,14 +32,14 @@ describe("Switch of test ProductCard", () => {
 
     title = screen.getByText(titleMock);
     image = screen.getByAltText(titleMock) as HTMLImageElement;
-    price = screen.getByText(priceMock);
+    price = screen.getByText(`R$ ${priceMock}`);
     button = screen.getByText(label) as HTMLButtonElement;
     elements = [title, image, price, button];
   });
 
   test("checks if all necessary elements are rendered", () => {
     elements.forEach((element) => {
-      expect(element).toBeInTheDocument;
+      expect(element).toBeInTheDocument();
     });
   });
 

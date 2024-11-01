@@ -12,7 +12,7 @@ export const useProduts = () => {
       try {
         const response = await api.get("/products");
         setProducts(response.data);
-      } catch (err) {
+      } catch {
         setError("error when searching for product");
       } finally {
         setLoading(false);
