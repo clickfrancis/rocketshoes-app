@@ -1,50 +1,69 @@
-# React + TypeScript + Vite
+# RocketShoes App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição do Projeto
 
-Currently, two official plugins are available:
+RocketShoes é uma aplicação de e-commerce desenvolvida com React e Vite. Este projeto simula uma experiência de compra, permitindo que os usuários visualizem produtos, adicionem itens ao carrinho e realizem o checkout.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+- **Frontend:**
+  - React
+  - Vite
+  - Material-UI (MUI)
+  - Styled-components
+  - React Router
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Testes:**
+  - Vitest
+  - React Testing Library
 
-- Configure the top-level `parserOptions` property like this:
+- **Outras Dependências:**
+  - Axios para requisições HTTP
+  - Emotion para estilização
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Dados Mockados
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Os dados da aplicação são mockados usando um arquivo `db.json`. Para simular um servidor local e visualizar os dados, você pode usar o `json-server`. 
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Instruções para Executar o JSON Server
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Certifique-se de ter o `json-server` instalado. Se não tiver, você pode instalá-lo globalmente usando o seguinte comando:
+
+  ```bash
+  npm install -g json-server
+  ```
+
+2. Navegue até o diretório do projeto e execute o seguinte comando para iniciar o servidor:
+    
+  ```bash
+  json-server --watch db.json
+  ```
+
+3. O servidor irá rodar em ``` http://localhost:3000 ```, e você poderá acessar os dados mockados.
+
+## Para ultilizar a Aplicação
+
+- Para a ultilização do projeto é essencial a instalação do [Node.js](https://nodejs.org/), sendo a versão 14 ou superior.
+  
+- fazer uma instalação da dependências ultilizando:
+  
+  ```bash
+  npm install
+
+- Precisa tambem digitar o comando:
+  ```bash
+  npm run dev
+
+Isso iniciará o servidor de desenvolvimento do Vite e a aplicação estará disponível em ```http://localhost:517```.
+
+- **Scripts Disponíveis**-
+
+  - **dev**: Inicia o servidor de desenvolvimento.
+  - **build**: Compila a aplicação para produção.
+  - **lint**: Executa o linter no código.
+  - **preview**: Visualiza a aplicação em modo de pré-visualização.
+  - **test**: Executa os testes usando Vitest.
+
+## Contribuição
+Sinta-se à vontade para contribuir para o projeto. Faça um fork do repositório, realize suas alterações e envie um pull request.
+
